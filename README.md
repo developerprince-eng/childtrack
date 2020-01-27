@@ -6,31 +6,20 @@ This is a basic tracking application which keeps track of animals by use of Eart
 
 The first phase it keeps track of a single animal this is demo project.
 
-## API DOCUMENTATION
+## DOCUMENTATION
 
-| REQUEST |                 END POINT                       |       PARAMETERS          |           RESULTS         |
-|---------|-------------------------------------------------|---------------------------|---------------------------|
-|  GET    | /track |                           |                           |
-|  POST   | /track|  longitude, latitude      |                           |
-
+This is an embedded system for Arduino
 ## SETUP
-```bash
-python -m venv dev
 
-source dev/bin/activate
-```
+Download The following Libraries
+1. [SIM808](https://www.arduinolibraries.info/libraries/sim808)
+2. [Ardion Log](https://www.arduinolibraries.info/libraries/arduino-log)
+
+Unpack the Libraries and place in the Arduino Libraries Folder
 ## RUN
-```bash
-export FLASK_APP=run.py #linus or unix environment
-export FLASK_ENV=development #linux or unix environment
 
-set FLASK_APP=run.py #Win environment
-set FLASK_ENV=development #Win environment
-```
-### start server
-```bash
-flask run
-```
+Open the Project using Arduino IDE
+
 Coming Soon
 
 This Web Application Powered by VillageWork

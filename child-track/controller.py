@@ -1,5 +1,7 @@
 import os
 from flask import flash, redirect, render_template, url_for, request, Flask, jsonify, send_file
+import json
+from datetime import datetime 
 from werkzeug.security import generate_password_hash
 from werkzeug.utils import secure_filename
 from . import app
@@ -48,3 +50,31 @@ def server_error_gateway_timeout(e):
 def index():
 	resp = jsonify({'message' : 'The API IS READY'})
 	return resp
+
+@app.route("/track", methods=['GET', 'POST'])
+def track():
+	if request.method == 'POST':
+		longitude = request.values.get('longitude') 
+		latitude = request.values.get('latitude') 
+		date_time = str(datetime.now())
+		db = mongoconfig['child_track']
+		collection = db['locations']
+		loc_data= {
+            "longitude" : longitude,
+            "latitude" : latitude,
+			"created_time" : date_time
+        }
+		collection.insert_one(loc_data)
+		resp = jsonify({'status' :'success'})
+		resp.status_code = 201
+		return resp
+		
+	else:
+		db = mongoconfig['child_track']
+		collection = db['locations']
+		documents = collection.find()
+		response = []
+		for document in documents:
+			document['_id'] = str(document['_id'])
+			response.append(document)
+		return json.dumps(response)

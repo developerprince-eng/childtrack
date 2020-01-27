@@ -10,8 +10,8 @@ The first phase it keeps track of a single animal this is demo project.
 
 | REQUEST |                 END POINT                       |       PARAMETERS          |           RESULTS         |
 |---------|-------------------------------------------------|---------------------------|---------------------------|
-|  GET    | /animal_tracking_system/api/controllers/locator |                           |                           |
-|  POST   | /animal_tracking_system/api/controllers/tracker |  longitude, latitude      |                           |
+|  GET    | /track |                           |                           |
+|  POST   | /track|  longitude, latitude      |                           |
 
 ## SETUP
 ```bash

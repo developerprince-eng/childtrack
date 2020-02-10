@@ -6,6 +6,7 @@ from werkzeug.security import generate_password_hash
 from werkzeug.utils import secure_filename
 from . import app
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+from . import mongoconfig
 
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS

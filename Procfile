@@ -1,1 +1,1 @@
-web: gunicorn child-track:app
+web: gunicorn child_track:app

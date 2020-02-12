@@ -58,7 +58,7 @@ def track():
 		longitude = request.values.get('longitude') 
 		latitude = request.values.get('latitude') 
 		date_time = str(datetime.now())
-		db = mongoconfig['child_track']
+		db = mongoconfig['heroku_wtb5qshf']
 		collection = db['locations']
 		loc_data= {
             "longitude" : longitude,
@@ -71,7 +71,7 @@ def track():
 		return resp
 		
 	else:
-		db = mongoconfig['child_track']
+		db = mongoconfig['heroku_wtb5qshf']
 		collection = db['locations']
 		documents = collection.find()
 		response = []

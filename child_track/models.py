@@ -70,3 +70,8 @@ class User(db.Model, UserMixin):
 		return User.query.filter_by(email=email).first()
 	
 
+class Location(db.Model):
+	__tablename__ = 'locations'
+	id = db.Column(db.Integer, primary_key=True)
+	latitude = db.Column(db.Float())
+	longitude = db.Column(db.Float())
